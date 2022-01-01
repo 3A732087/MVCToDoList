@@ -1,33 +1,11 @@
-﻿<div class="container-fulid">
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-4">
-        <div class="card  ">
-            <div class="card-header">
-                New Task
-            </div>
-            <div class="card-body">
+﻿@model IEnumerable<MVCToDoList.Models.tToDo>
 
-                <form>
-                    <div class="form-group">
-                        <label for="task-name">Task</label>
-                        <input type="text" class="col-sm-12 col-lg-12 form-control" id="task-name">
-                    </div>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-                    <div class="form-group">
-                        <label for="task-level">Level</label>
-                        <input type="text" class="col-sm-12 col-lg-12 form-control" id="task-level">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="task-deadline">Deadline</label>
-                        <input type="date" class="col-sm-12 col-lg-12 form-control" id="task-deadline">
-                    </div>
-
-                    <button type="submit" class="btn btn-light"><i class="fas fa-plus"></i> Add Task</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
+<div class="container-fulid">
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-4">
         <div class="card  ">
             <div class="card-header">
@@ -45,39 +23,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>1</td>
-                            <td>2021/12/31</td>
-                            <td>
-                                <button type="submit" class="btn btn-danger">
-                                    <i class="fa fa-btn fa-trash"></i>Delete
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>2</td>
-                            <td>2021/10/30</td>
-                            <td>
-                                <button type="submit" class="btn btn-danger">
-                                    <i class="fa fa-btn fa-trash"></i>Delete
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>1</td>
-                            <td>2021/10/05</td>
-                            <td>
-                                <button type="submit" class="btn btn-danger">
-                                    <i class="fa fa-btn fa-trash"></i>Delete
-                                </button>
-                            </td>
-                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th scope="row">@Html.DisplayFor(modelItem => item.fId)</th>
+                                <td>@Html.DisplayFor(modelItem => item.fTitle)</td>
+                                <td>@Html.DisplayFor(modelItem => item.fLevel)</td>
+                                <td>@DateTime.Parse(item.fDeadline.ToString()).ToShortDateString()</td>
+                                <td>
+                                    <button id="delete" type="submit" class="btn btn-danger">
+                                        <i class="fa fa-btn fa-trash"></i>@Html.ActionLink("Delete", "Delete", new { id = item.fId })
+                                    </button>
+                                </td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>
@@ -85,3 +44,12 @@
     </div>
 
 </div>
+
+@section scripts{
+    <script>
+
+    </script>
+
+}
+
+
