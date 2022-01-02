@@ -21,21 +21,18 @@
                         <label for="task-name" class="control-label">Task</label>
                         @Html.EditorFor(model => model.fTitle, new { htmlAttributes = new { @class = "col-sm-12 col-lg-12 form-control" , required="required"} })
                         @Html.ValidationMessageFor(model => model.fTitle, "", new { @class = "text-danger" })
-                        @*<input type="text" class="col-sm-12 col-lg-12 form-control" id="task-name">*@
                     </div>
 
                     <div class="form-group">
                         <label for="task-level" class="control-label">Level</label>
                         @Html.EditorFor(model => model.fLevel, new { htmlAttributes = new { @class = "col-sm-12 col-lg-12 form-control", required = "required" } })
                         @Html.ValidationMessageFor(model => model.fLevel, "", new { @class = "text-danger" })
-                        @*<input type="text" class="col-sm-12 col-lg-12 form-control" id="task-level">*@
                     </div>
 
                     <div class="form-group">
                         <label for="task-deadline" class="control-label">Deadline</label>
                         @Html.EditorFor(model => model.fDeadline, new { htmlAttributes = new { @class = "col-sm-12 col-lg-12 form-control", type="date", required = "required" } })
                         @Html.ValidationMessageFor(model => model.fDeadline, "", new { @class = "text-danger" })
-                        @*<input type="date" class="col-sm-12 col-lg-12 form-control" id="task-deadline">*@
                     </div>
 
                     <button type="submit" class="btn btn-light" value="Add Task"><i class="fas fa-plus"></i> Add Task</button>
@@ -45,50 +42,6 @@
     </div>
 }
 
-
-@*@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>tToDo</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.fTitle, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.fTitle, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.fTitle, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.fLevel, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.fLevel, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.fLevel, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.fDeadline, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.fDeadline, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.fDeadline, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>*@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -34,5 +34,14 @@ namespace MVCToDoList.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Delete(int id)
+        {
+            var todo = db.tToDo.Where(m => m.fId == id).FirstOrDefault();
+            db.tToDo.Remove(todo);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
     }
 }

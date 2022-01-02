@@ -32,7 +32,7 @@
                                 <td>@DateTime.Parse(item.fDeadline.ToString()).ToShortDateString()</td>
                                 <td>
                                     <button id="delete" type="submit" class="btn btn-danger">
-                                        <i class="fa fa-btn fa-trash"></i>@Html.ActionLink("Delete", "Delete", new { id = item.fId })
+                                        <i class="fa fa-btn fa-trash"></i>@Html.ActionLink("Delete", "Delete", new { id = item.fId }, new { onclick = "return confirm('確定刪除嗎?')", style = "color:white" })
                                     </button>
                                 </td>
                             </tr>
