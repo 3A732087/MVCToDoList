@@ -6,17 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Bootstrap CSS-->
-    @*<link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/all.css">
-        <script src="js/jquery-3.6.0.js"></script>
-        <script src="js/all.js"></script>
-        <script src="js/bootstrap.js"></script>*@
-    <title>Document</title>
+    <title>ToDoList</title>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @*<link rel="stylesheet" href="~/Content/all.css">*@
     <link rel="stylesheet" href="~/Content/style.css">
 
 
@@ -34,16 +28,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="Home/Index">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/Home/Index">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Home/Create">Add Task</a>
+                    <a class="nav-link" href="/Home/Create">Add Task</a>
                 </li>                              
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
     </nav>
 
